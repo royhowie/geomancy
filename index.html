@@ -5,12 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="jquery-2.1.3.min.js"></script>
 	<style>
-		@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 		* {
-			padding: 0;
-			margin: 0;
-			text-align: center;
 			font-family: 'Open Sans Condensed', sans-serif;
+			margin: 0;
+			padding: 0;
+			text-align: center;
 		}
 		html, body {
 			background-color: #fcfcfa;
@@ -19,25 +19,26 @@
 			margin: 15px 0 -10px 0;
 		}
 		#container {
+			border-radius: 4px;
+			border: solid 1px black;
 			display: block;
-			width: 700px;
 			height: 550px;
 			left: 0;
 			margin: auto;
 			margin-top: 50px;
 			right: 0;
-			border: solid 1px black;
+			width: 700px;
 		}
 		.question {
+		    background: #fcfcfa url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==") no-repeat 98% 50%;
+		    border-radius: 3px;
 		    border: 1px solid #345;
 		    left: 0;
-		    right: 0;
 		    margin: auto;
 		    margin-top: 25px;
-		    width: 75%;
-		    border-radius: 3px;
 		    overflow: hidden;
-		    background: #fcfcfa url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==") no-repeat 98% 50%;
+		    right: 0;
+		    width: 75%;
 		}
 		.question select {
 		    -webkit-appearance: none;
@@ -70,23 +71,16 @@
 			background-color: #ddd;
 		}
 
-		button#fortune {
-			display: none;
-			width: 75%;
-			margin-top: 15px;
-		}
-
-
 		img#geo-background {
+			height: auto;
 			position: absolute;
 			width: 250px;
-			height: auto;
 			z-index: 0;
 		}
 		img.face {
-			position: absolute;
 			height: 54px;
 			margin-left: 200px;
+			position: absolute;
 			z-index: 5;
 		}
 		img#die1 { margin: 0px 0 0 17px }
@@ -95,41 +89,43 @@
 		img#die4 { margin: 0px 0 0 179px }
 
 		div#geomancer-wrapper {
-			float: left;
-			display: inline-block;
-			margin: 40px 17px 0 52px;
+			border-radius: 4px;
 			border: solid 1px black;
+			display: none;
+			float: left;
 			height: 200px;
-			width: 40%;
+			margin: 40px 17px 0 52px;
 			position: relative;
+			width: 40%;
 		}
 		div#results {
-			float: left;
-			display: inline-block;
-			margin: 40px 0 0 18px;
+			border-radius: 4px;
 			border: solid 1px black;
+			display: none;
+			float: left;
 			height: 200px;
-			width: 40%;
+			margin: 40px 0 0 18px;
 			position: relative;
+			width: 40%;
 		}
 		div#geomancer {
-			width: 250px;
 			left: 0;
-			right: 0;
 			margin: auto;
 			margin-top: 35px;
+			right: 0;
+			width: 250px;
 		}
 		button#roll {
-			display: inline-block;
-			width: 218px;
-			margin: 70px 0 0 16px;
 			border-radius: 4px;
+			display: inline-block;
+			margin: 70px 0 0 16px;
+			width: 218px;
 		}
 		div.roll-result {
-			margin: -2px 0 -10px 0;
-			width: 100%;
 			float: left;
 			height: 60px;
+			margin: -2px 0 -10px 0;
+			width: 100%;
 		}
 		div.roll-result img {
 			display: inline-block;
@@ -137,35 +133,42 @@
 			margin: 10px 8px 0 0;
 		}
 		div#your-fortune {
-			width: 100%;
+			display: inline-block;	
 			margin: 10px 0 0 0;
-			display: inline-block;
-			border: solid 1px black;
+			width: 100%;
 		}
 		div.circle {
-			margin: 0;
-			padding: 0;
-			display: inline-block;
-			border-radius: 50%;
-			height: 15px;
-			width: 15px;
 			background-color: #3E4C51;
+			border-radius: 50%;
+			display: inline-block;
+			height: 15px;
+			margin: 0 4px;
+			padding: 0;
+			width: 15px;
 		}
 		div#pattern {
-			float: right;
-			width: 50%;
+			float: left;
 			height: 150px;
+			margin-left: 25px;
+			width: 50%;
 		}
 		div.sub-pattern {
-			height: 50%;
 			display: inline-block;
+			height: 50%;
 			width: 34%;
 		}
 		div.row {
 			display: inline-block;
-			padding: 0;
 			margin: 0;
+			padding: 0;
 			width: 100%;
+		}
+		div#fortune-box {
+			display: inline-block;
+			height: 150px;
+			margin: 0 0 0 -55px;
+			width: 40%;
+			/*border: solid 1px black;*/
 		}
 	</style>
 </head>
@@ -174,7 +177,6 @@
 		<h1 id="title">
 			choose a question
 		</h1>
-		
 		<div class="question">
 			<select id="question">
 				<option value="-1">select a question</option>
@@ -185,7 +187,6 @@
 				<option value="4">q5</option>
 			</select>
 		</div>
-		<button id="fortune">Tell me my fortune</button>
 		<div id="geomancer-wrapper">
 			<div id="geomancer">
 				<img id="geo-background" src="geomancer.png">
@@ -255,6 +256,9 @@
 					</div>
 				</div> -->
 			</div>
+			<div id="fortune-box">
+				<p></p>
+			</div>
 		</div>
 	</div>
 </body>
@@ -265,8 +269,10 @@
 			return (a[i] + b[i]) % 2;
 		})
 	}
+	var getCircles = function (n) {
+		return (n == 2 ? "<div class='circle'></div>" : "") + "<div class='circle'></div>";
+	}
 
-	// make sure to pass an array of length 16
 	var patterns = function (dots) {
 		// dots = dots.length == 16 ? dots : Array.apply(null, new Array(16)).map(function () { return Math.random() < 0.5 ? 0 : 1});
 		var mothers = [], daughters = [], nephews = [], witnesses = [];
@@ -324,10 +330,6 @@
 		)
 	}
 
-	var getCircles = function (n) {
-		return (n == 2 ? "<div class='circle'></div>" : "") + "<div class='circle'></div>";
-	}
-
 	var generatePattern = function (arr) {
 		console.log("generating the pattern...")
 		arr = patterns(arr).map(function (row) { return row.map(function (item) { return 2 - item }) })
@@ -342,8 +344,8 @@
 			}
 			$("#pattern").append(s + "</div>");
 		}
+		$("#fortune-box p").text("your fortune would be here");
 	}
-
 
 	var k = 0, total = [];
 	var process = function () {
@@ -373,21 +375,13 @@
 			}, 250)
 		}
 	}
-
 	$(document).ready(function () {
 		$("#question").change(function () {
 			var v = parseInt($(this).val());
-			$("#fortune").css("display", v != -1 ? "block" : "none");
+			$("#geomancer-wrapper, #results").css("display", v != -1 ? "inline-block" : "none");
 		});
 
 		$("#roll").click(process);
 	})
-
-
-
-
-
-
-
 </script>
 </html>
