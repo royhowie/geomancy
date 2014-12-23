@@ -63,12 +63,36 @@
         #pick p {
         	text-align: center;
         }
+		.question {
+		    border: 1px solid #ccc;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+		    margin-top: 25px;
+		    width: 75%;
+		    border-radius: 3px;
+		    overflow: hidden;
+		    background: #fcfcfa url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==") no-repeat 98% 50%;
+		}
+		.question select {
+		    -webkit-appearance: none;
+		    background-image: none;
+		    background: transparent;
+		    border: none;
+		    box-shadow: none;
+		    padding: 5px 8px;
+		    width: 100%;
+		}
+		.question select:focus {
+		    outline: none;
+		}
 	</style>
 </head>
 <body>
 	<div id="container">
 		<h1>Have your fortune told!</h1>
-		<div id="dropdown">
+		<!--
+			<div id="dropdown">
 			<div id="pick">
 				<p>select a question</p>
 			</div>
@@ -90,18 +114,19 @@
                 <input type="radio" name="q" value="2" id="7">
                 <label for="7">q7</label>
 			</div>
-		</div>
+		</div> -->
 		
-		<!--
+		<div class="question">
 			<select name="question">
+				<option>select a question</option>
 				<option>If the asker shall have children?</option>
 				<option>q2</option>
 				<option>q3</option>
 				<option>q4</option>
 				<option>q5</option>
 			</select>
-			<button id="fun">click me</button>
-		-->
+		</div>
+		
 	</div>
 </body>
 <script>
