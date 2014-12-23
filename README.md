@@ -8,5 +8,8 @@ The first 16 rolls are random. Every pattern generated thereafter is based on th
 
 >"[T]he practitioners of the art have found geomancy to be a true science through which things future, present, and past may be revealed, provided the geomancer's judgement is not obscured by the obnoxious influences of the body or the deceitful actions of the senses." (Richard Fludd 1617, in Josten 1964).
 
-Interested in learning more about geomancy? The [wikipedia](http://en.wikipedia.org/wiki/Geomancy) page is rather informative, as is [this page](http://sarahgoslee.com/as/geomancy/).
+######Interested in learning more about geomancy?
+<p>
+The <a href="http://en.wikipedia.org/wiki/Geomancy">wikipedia</a> page is rather informative, as is <a href="http://sarahgoslee.com/as/geomancy/">this page</a>.
+</p>
 ========
