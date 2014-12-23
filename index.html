@@ -190,7 +190,7 @@
 		div#pattern {
 			float: left;
 			height: 150px;
-			margin-left: 25px;
+			margin-left: 20px;
 			width: 50%;
 		}
 		div.sub-pattern {
@@ -438,7 +438,12 @@
 	$(document).ready(function () {
 		$("#question").change(function () {
 			var v = parseInt($(this).val());
-			$("#geomancer-wrapper, #results").css("display", v != -1 ? "inline-block" : "none");
+			// should reset everything, if a new question is selected
+			if (v != -1) {
+				$("#geomancer-wrapper, #results").css("display", "inline-block");
+			} else {
+				window.location.reload();
+			}
 			k = 0; total = []; r = [];
 			$("#results").empty();
 			$("#times").text(4);
