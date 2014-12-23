@@ -1,4 +1,4 @@
-geomancy
+#geomancy
 
 Geomancy came to Europe from the Islamic world over 1000 years ago. It became popular around the 12th century. Like all forms of "science" from the Medieval Ages, it is actually complete pseudoscience. Nevertheless, it is fun to play around with.
 
