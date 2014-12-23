@@ -19,6 +19,13 @@
 		h1 {
 			margin: 15px 0 -10px 0;
 		}
+		a {
+			text-decoration: none;
+			color: #456;
+		}
+		a:hover {
+			color: #7BE;
+		}
 		#wrapper {
 			min-height: 100%;
 			margin: 0 auto -35px;
@@ -307,9 +314,12 @@
 		<div id="push"></div>
 	</div>
 	<div id="footer">
-		<!-- <div class="length-wrapper"> -->
-			<p>by Maggie Rivers & Roy Howie</p>
-		<!-- </div> -->
+		<p>
+			by
+			<a>Maggie Rivers</a>
+			&
+			<a href="http://royhowie.com">Roy Howie</a>
+		</p>
 	</div>
 </body>
 <script>
@@ -429,6 +439,9 @@
 		$("#question").change(function () {
 			var v = parseInt($(this).val());
 			$("#geomancer-wrapper, #results").css("display", v != -1 ? "inline-block" : "none");
+			k = 0; total = []; r = [];
+			$("#results").empty();
+			$("#times").text(4);
 		});
 
 		$("#roll").click(process);
