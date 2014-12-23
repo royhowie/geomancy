@@ -123,6 +123,17 @@
 			margin: 70px 0 0 16px;
 			border-radius: 4px;
 		}
+		div.roll-result {
+			margin: -2px 0 -10px 0;
+			width: 100%;
+			float: left;
+			height: 60px;
+		}
+		div.roll-result img {
+			display: inline-block;
+			height: 40px;
+			margin: 10px 8px 0 0;
+		}
 	</style>
 </head>
 <body>
@@ -152,27 +163,25 @@
 				<button id="roll">roll</button>
 				<p>
 					<small>
-						(you get to roll 4 times)
+						(you may roll <span id="times">4</span> more times)
 					</small>
 				</p>
 			</div>
 		</div>
 		<div id="results">
-
+			<!--
+				<div class="roll-result">
+					<img src="diefaces/die1.png">
+					<img src="diefaces/die2.png">
+					<img src="diefaces/die3.png">
+					<img src="diefaces/die4.png">
+				</div>
+			-->	
 		</div>
 	</div>
 </body>
 <script>
-	var roll = function () {
-		return (Math.random() * 4) | 0;
-	}
-	var getNumber = function () {
-		var binary = [roll(), roll(), roll()].map(function (item) {
-				return (item.toString(2).length == 1 ? "0" : "") + item.toString(2);
-			}).join("");
-		return parseInt((roll() > 1 ? "1" : "0") + binary, 2);
-	}
-
+	var roll = function () { return (Math.random() * 4) | 0 }
 	var meld = function (a, b) {
 		return a.map(function (d, i) {
 			return (a[i] + b[i]) % 2;
@@ -181,8 +190,8 @@
 
 	// make sure to pass an array of length 16
 	var patterns = function (dots) {
-		var dots = Array.apply(null, new Array(16)).map(function () { return Math.random() < 0.5 ? 0 : 1}),
-			mothers = [], daughters = [], nephews = [], witnesses = [];
+		// var dots = Array.apply(null, new Array(16)).map(function () { return Math.random() < 0.5 ? 0 : 1});
+		var mothers = [], daughters = [], nephews = [], witnesses = [];
 
 		// generate the mothers and daughters
 		for (var i = 0; i < 4; i++) {
@@ -221,38 +230,44 @@
 			}
 		}
 		for (var i = 1; i < 5; i++) {
+			r[i - 1] = false;
 			shiftFace(i, i, 50);
 		}
 	}
 
-	var alternateFaces = function () {
-
-
-
-
-		for (var i = 1; i < 5; i++) {
-			currentFaces = roll();
-			var t = function () {
-				this.place = i - 1;
-			}
-			alternateFaces[i - 1] = setInterval(function () {
-				currentFaces = roll();
-			}, 400 + (Math.random() * 200));
-		}
+	var appendResults = function (arr) {
+		$("#results").append(
+			'<div class="roll-result">' +
+				'<img src="diefaces/die' + arr[0] + '.png">' +
+				'<img src="diefaces/die' + arr[1] + '.png">' +
+				'<img src="diefaces/die' + arr[2] + '.png">' +
+				'<img src="diefaces/die' + arr[3] + '.png">' +
+			'</div>'
+		)
 	}
 
-	console.log(rollFaces());
 
-
-
+	var k = 0, total = [];
 	var process = function () {
-		console.log("running")
-		$("#roll").attr("disabled", true);
-		setTimeout(function () {
-			$("#roll").attr("disabled", false);
-		}, 3000)
-		rollFaces();
-		console.log(r);
+		$("#times").text(4 - ++k);
+		if (k < 5) {
+			$("#roll").attr("disabled", true);
+			rollFaces();
+
+			var l = setInterval(function () {
+				if (r.reduce(function (p, c) { return p && c })) {
+					$("#roll").attr("disabled", false);
+					total = total.concat(r);
+					appendResults(r);
+					console.log(total);
+					clearInterval(l);
+					if (k == 4) {
+						$("#times").parent().parent().remove();
+						$("#roll").attr("disabled", true);
+					}
+				}
+			}, 250)
+		}
 	}
 
 	$(document).ready(function () {
@@ -262,7 +277,6 @@
 		});
 
 		$("#roll").click(process);
-
 	})
 
 
