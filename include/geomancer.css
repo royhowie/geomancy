@@ -1,0 +1,215 @@
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);*/
+@import url(http://fonts.googleapis.com/css?family=News+Cycle);
+* {
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	font-family: 'News Cycle', sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+html, body {
+	background-color: #fcfcfa;
+	height: 93%;
+}
+h1 {
+	margin: 15px 0 -10px 0;
+}
+a {
+	text-decoration: none;
+	color: #456;
+}
+a:hover {
+	color: #7BE;
+}
+#wrapper {
+	min-height: 100%;
+	margin: 0 auto -20px;
+}
+#footer, #push {
+	height: 20px;
+}
+#footer {
+	padding: 5px 0 15px 0;
+}
+#footer p {
+	margin: 10px 0 0 0;
+}
+#container {
+	border-radius: 4px;
+	border: solid 1px black;
+	display: block;
+	height: 575px;
+	left: 0;
+	margin: auto;
+	margin-top: 75px;
+	right: 0;
+	width: 700px;
+}
+#header {
+	position: absolute;
+	top: 5px;
+	width: 100%;
+}
+#header img {
+	margin: 7px 0 0 6px;
+	height: 30px;
+	width: auto;
+	float: left;
+}
+div.length-wrapper {
+	border-radius: 4px;
+	/*border: solid 1px black;*/
+	height: 44px;
+	width: 700px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+#header h2 {
+	margin: 6px 0 0 0;
+	/* was 4px for top */
+}
+.question {
+    background: #fcfcfa url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==") no-repeat 98% 50%;
+    border-radius: 3px;
+    border: 1px solid #345;
+    left: 0;
+    margin: auto;
+    margin-top: 25px;
+    overflow: hidden;
+    right: 0;
+    width: 75%;
+}
+.question select {
+    -webkit-appearance: none;
+    background-image: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    height: 40px;
+    padding: 5px 8px;
+    width: 100%;
+}
+.question select:focus {
+    outline: none;
+}
+button {
+	background-color: #7BE;
+	border-radius: 4px;
+	border: solid 1px #7BE;
+	color: #fcfcfa;
+	display: inline-block;
+	font-size: 1.0em;
+	font-weight: 300;
+	height: 40px;
+	left: 0;
+	margin: auto;
+	padding: 0 0 5px 0;
+	right: 0;
+}
+button#roll {
+	margin: 70px 0 0 16px;
+	width: 218px;
+}
+button:hover {
+	background-color: #fcfcfa;
+	color: #7BE;
+}
+button:disabled, button:disabled:hover {
+	background-color: #ddd;
+	color: #7BE;
+}
+img#geo-background {
+	height: auto;
+	position: absolute;
+	width: 250px;
+	z-index: 0;
+}
+img.face {
+	height: 54px;
+	margin-left: 200px;
+	position: absolute;
+	z-index: 5;
+}
+img#die1 { margin: 0px 0 0 17px }
+img#die2 { margin: 0px 0 0 71px }
+img#die3 { margin: 0px 0 0 125px }
+img#die4 { margin: 0px 0 0 179px }
+
+div#geomancer-wrapper {
+	border-radius: 4px;
+	/*border: solid 1px black;*/
+	display: none;
+	float: left;
+	height: 200px;
+	margin: 40px 17px 0 52px;
+	position: relative;
+	width: 40%;
+}
+div#results {
+	border-radius: 4px;
+	/*border: solid 1px black;*/
+	display: none;
+	float: left;
+	height: 200px;
+	margin: 40px 0 0 18px;
+	position: relative;
+	width: 40%;
+}
+div#geomancer {
+	margin: 35px 0 0 7px;
+	width: 250px;
+}
+div.roll-result {
+	float: left;
+	height: 60px;
+	margin: -2px 0 -10px 5px;
+	width: 100%;
+}
+div.roll-result img {
+	display: inline-block;
+	height: 40px;
+	margin: 10px 8px 0 0;
+}
+div#your-fortune {
+	display: inline-block;	
+	margin: 10px 0 0 0;
+	width: 100%;
+}
+div.circle {
+	/*background-color: #3E4C51;*/
+	background-color: #545556;
+	border-radius: 50%;
+	display: inline-block;
+	height: 15px;
+	margin: 0 4px;
+	padding: 0;
+	width: 15px;
+}
+div#pattern {
+	float: left;
+	height: 150px;
+	margin-left: 20px;
+	width: 50%;
+}
+div.sub-pattern {
+	display: inline-block;
+	height: 50%;
+	width: 34%;
+}
+div.row {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+div#fortune-box {
+	display: inline-block;
+	height: 150px;
+	margin: 0 0 0 -55px;
+	width: 40%;
+	/*border: solid 1px black;*/
+}
+p#rolls-left {
+	margin-left: 16px;
+}

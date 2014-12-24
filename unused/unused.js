@@ -1,9 +1,3 @@
-// geomancer
-
-var roll = function () {
-	return (Math.random() * 4) | 0;
-}
-
 var getNumber = function () {
 	var binary = [roll(), roll(), roll()].map(function (item) {
 			return (item.toString(2).length == 1 ? "0" : "") + item.toString(2);
