@@ -1,4 +1,5 @@
 // geomancy.js
+
 var roll = function () { return (Math.random() * 4) | 0 }
 var meld = function (a, b) {
 	return a.map(function (d, i) {
@@ -11,6 +12,7 @@ var getCircles = function (n) {
 
 var patterns = function (dots) {
 	// dots = Array.apply(null, new Array(16)).map(function () { return Math.random() < 0.5 ? 0 : 1});
+	// with (Math) return round(random()); // to be really dumb ofc
 	var mothers = [], daughters = [], nephews = [], witnesses = [];
 
 	// generate the mothers and daughters
@@ -36,7 +38,7 @@ var patterns = function (dots) {
 	return witnesses.concat([ meld(witnesses[0], witnesses[1]) ]);
 }
 
-var r = [];
+var r = [];	// holds the state of the dice; false when still rolling, truthy when not
 var rollFaces = function () {
 	var shiftFace = function (n, face, time) {
 		face = (1 + face) % 4;
@@ -67,10 +69,11 @@ var appendResults = function (arr) {
 }
 
 var generatePattern = function (arr) {
-	console.log("generating the pattern...")
-	arr = patterns(arr).map(function (row) { return row.map(function (item) { return 2 - item }) })
-
-	console.log(arr);
+	arr = patterns(arr).map(function (row) {
+		return row.map(function (item) {
+			return 2 - item
+		})
+	})
 	for (var i = 0; i < arr.length; i++) {
 		var s = "<div class='sub-pattern'>";
 		for (var j = 0; j < arr[i].length; j++) {
@@ -105,8 +108,8 @@ var process = function () {
 					})
 					generatePattern(total);
 				}
-				console.log(total);
-				console.log("k is", k);
+				// console.log(total);
+				// console.log("k is", k);
 			}
 		}, 250)
 	}
@@ -115,6 +118,7 @@ $(document).ready(function () {
 	$("#question").change(function () {
 		var v = parseInt($(this).val());
 		// should reset everything, if a new question is selected
+		// really need to work on this functionality!!
 		if (v != -1) {
 			$("#geomancer-wrapper, #results").css("display", "inline-block");
 		} else {
