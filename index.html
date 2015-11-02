@@ -1,66 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
 	<title>geomancer</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="include/jquery-2.1.3.min.js"></script>
-	<link href="include/geomancer.css" rel="stylesheet">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='./bundle.js'></script>
+	<link href='include/geomancer.css' rel='stylesheet'>
 </head>
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<div class="length-wrapper">
-				<img src="ulogo.png">
+	<div id='wrapper'>
+		<div id='header'>
+			<div class='length-wrapper'>
+				<img src='./images/ulogo.png'>
 				<h2>
 					Otto G. Richter Library | Department of Special Collections
 				</h2>
 			</div>
 		</div>
-		<div id="container">
-			<h1 id="title">
+		<div id='container'>
+			<h1 id='title'>
 				choose a question
 			</h1>
-			<div class="question">
-				<select id="question">
-					<option value="-1">select a question</option>
-					<option value="0">If the asker shall have children?</option>
-					<option value="1">q2</option>
-					<option value="2">q3</option>
-					<option value="3">q4</option>
-					<option value="4">q5</option>
+			<div class='question'>
+				<select id='question'>
+					<option value='-1'>Select Thy Ponderation</option>
 				</select>
 			</div>
-			<div id="geomancer-wrapper">
-				<div id="geomancer">
-					<img id="geo-background" src="geomancer.png">
-					<img id="die1" src="diefaces/die1.png" class="face">
-					<img id="die2" src="diefaces/die2.png" class="face">
-					<img id="die3" src="diefaces/die3.png" class="face">
-					<img id="die4" src="diefaces/die4.png" class="face">
-					<button id="roll">roll</button>
-					<p id="rolls-left">
+			<div id='geomancer-wrapper'>
+				<div id='geomancer'>
+					<img id='geo-background' src='./images/geomancer.png'>
+					<img id='die1' src='./images/die1.png' class='face'>
+					<img id='die2' src='./images/die2.png' class='face'>
+					<img id='die3' src='./images/die3.png' class='face'>
+					<img id='die4' src='./images/die4.png' class='face'>
+					<button id='roll'>roll</button>
+					<p id='rolls-left'>
 						<small>
-							rolls left: <span id="times">4</span>
+							rolls left: <span id='times'>4</span>
 						</small>
 					</p>
 				</div>
 			</div>
-			<div id="results">
+			<div id='results'>
 			</div>
 
-			<div id="your-fortune">
-				<div id="pattern">
+			<div id='your-fortune'>
+				<div id='pattern'>
 				</div>
-				<div id="fortune-box">
-					<p></p>
-				</div>
+				<div id='fortune-box'></div>
 			</div>
 		</div>
-		<div id="push"></div>
+		<div id='push'></div>
 	</div>
-	<div id="footer">
-		<p> by <a href="http://royhowie.com">Roy Howie</a> & <a>Maggie Rivers</a></p>
+	<div id='footer'>
+		<p> by <a href='//royhowie.com'>Roy Howie</a> &amp; <a>Maggie Rivers</a></p>
 	</div>
 </body>
-<script src="include/geomancy.js"></script>
 </html>

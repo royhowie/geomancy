@@ -98,6 +98,7 @@ button {
 	border-radius: 4px;
 	border: solid 1px #7BE;
 	color: #fcfcfa;
+    cursor: pointer;
 	display: inline-block;
 	font-size: 1.0em;
 	font-weight: 300;
@@ -172,7 +173,7 @@ div.roll-result img {
 	margin: 10px 8px 0 0;
 }
 div#your-fortune {
-	display: inline-block;	
+	display: inline-block;
 	margin: 10px 0 0 0;
 	width: 100%;
 }

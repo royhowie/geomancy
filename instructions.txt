@@ -1,0 +1,18 @@
+- scanning of the book is complete
+- scans have been split up and properly divided into segments
+- segments uploaded to the Box account under "bookoffate/frame"; 2 text files
+  and 25 directories
+- patterns.txt represents the geomancer patterns of the 128 answers in the order
+  they appear; "2" is for two dots and "1" is for 1 dot
+- first 4-letter pattern on left, second on right; third is the parity
+- on which page of 8, along with column#, has the format "#page0-left"
+- "questions.txt" lists the different questions, numbered q00 to q24
+- each directory contains 145 files for question "qXX":
+
+
+The image parts of the 25 questions are divided into the 25 folders, which are numbered from q00 to q24.  In each folder appears 145 files, for question "qXX", these files are:
+*      qXX_cover.jpg ... the cover page and for page Y = 0, ..., 7
+*      qXX_pY_framed.jpg ... shows the 16 segments corresponding to the 16 answers on page Y for qXX,
+*      qXX_pY_info.txt ... shows the segment information and for segment positions Z = 0, ..., Y
+*      qXX_pY_L_Z.jpg ... the Z-th segment on the left column on page Y for question qXX
+*      qXX_pY_R_Z.jpg ... the Z-th segment on the right column on page Y for question qXX

@@ -1,6 +1,1 @@
-
-*.tiff
-
-IMG_0868.jpeg
-
-geomancer-2.png
+node_modules*

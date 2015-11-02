@@ -1,0 +1,25 @@
+q00: The Universal Intention of the Asker.
+q01: If the Asker Shall Obtain Ought of King or Prince.
+q02: If Justice Shall Be Obtained Before a Judge.
+q03: If the Asker Shall Obtain Wealth and Riches.
+q04: If the Asker Shall Obtain His Desire.
+q05: If the Marriage Proposed, Shall be Brought About.
+q06: Of a Pregnant Woman and Whether the Birth Shall Be Male or Female.
+q07: If the Sick Person Shall Recover; or Die.
+q08: If the City Besieged; Shall Be Taken.
+q09: If the Asker Shall Have Children?
+q10: If Things Stolen or Lost; Shall Be Recovered.
+q11: If the Journey or Voyage Proposed Shall Be Brought About?
+q12: If the Absent Person Shall Return?
+q13: If the Prisoner Shall Be Delivered.
+q14: Whether the Year Shall Be Dry; or Rainy?
+q15: If There is Any Thing Hidden in the Place Suppos'd?
+q16: If Buying, Selling, and Other Business; if Profitable?
+q17: If an Army Arrayed for Battle Whether They Shall Proceed in Their Course?
+q18: Whether the Army Shall Proceed to the place Proposed?
+q19: If the Armys Ongoing in Battle; Which; Shall Have Victory?
+q20: What Is the Nature or Description of Things Hid in a Certain Place?
+q21: If the Pilgrim Shall Accomplish His Pilgrimage.
+q22: Of Two Fighters; Which, Shall Prevail?
+q23: If Provision Shall Be Dear or Cheap This Year?
+q24: What Shall Be the General Faate of the Year?
