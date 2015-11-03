@@ -57,7 +57,6 @@ function step (fn, time) {
     })
 }
 
-
 class Die {
     constructor (startFace, target) {
         this.face = startFace
@@ -118,6 +117,7 @@ class PatternTable {
             })
         delete this.table['']
     }
+
     /*
         a table entry is [ page, side, index ]
         page is just the page number, starting from 0
@@ -247,7 +247,6 @@ class Geomancer {
                 + '</div>'
             )
         }).join('')
-        // console.log('result is', result, this.getFortuneLink(result))
         $('#fortune-box').innerHTML = `<img src='${ DOMAIN }/${ this.getFortuneLink(result) }'>`
     }
 
@@ -285,9 +284,7 @@ class Geomancer {
         this.rollCounter.innerHTML = this.rollsLeft
 
         let len = this.rolls.length
-
-        if (len === 0)
-            return
+        if (len === 0) return
 
         let toAppend = '</div>'
         for (let i = len - 1; i >= Math.max(0, len - 4); i--) {
@@ -298,7 +295,6 @@ class Geomancer {
         this.appendTo.innerHTML += toAppend
     }
 }
-
 
 function addQuestions (questions) {
     let target = $('#question')
@@ -312,7 +308,6 @@ function addQuestions (questions) {
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
-
     Promise.all([
         GET('./data/patterns.txt'),
         GET('./data/question-list.txt')
