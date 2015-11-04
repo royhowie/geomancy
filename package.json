@@ -1,0 +1,15 @@
+{
+  "name": "geomancy",
+  "description": "Book of Fate digitization research project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel": "^6.0.15",
+    "babel-polyfill": "^6.0.16",
+    "babel-preset-es2015": "^6.0.15",
+    "babelify": "^7.2.0",
+    "bluebird": "^3.0.5",
+    "browserify": "^12.0.1",
+    "uglifyify": "^3.0.1"
+  }
+}
