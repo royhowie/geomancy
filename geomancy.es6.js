@@ -41,13 +41,9 @@ function $ (q) {
     return document.querySelector(q)
 }
 
-/*
-    generates HTML for the circles
-    if `n == 2`, return 2 circles; otherwise, return a single circle
-*/
 function getCircles (n) {
     if (n == 2)
-        return `<div class="circle"></div><div class="circle"></div>`
+        return '<div class="circle"></div><div class="circle"></div>'
     return '<div class="circle"></div>'
 }
 
@@ -65,7 +61,7 @@ class Die {
     }
 
     getLink () {
-        return `./images/die${ this.face + 1 }.png`
+        return `../images/die${ this.face + 1 }.png`
     }
 
     getValue () {
@@ -140,14 +136,15 @@ class Geomancer {
         rollCounter     : node displaying the number of rolls left to the user
         patternHolder   : where the final pattern from `generatePattern` is held
     */
-    constructor (results, rollCounter, patternHolder, lookupTable) {
+    constructor (results, rollCounter, patternHolder, imageHolder, lookupTable) {
         this.rolls = []
         this.rollsLeft = 4
 
         this.appendTo = results
-        this.rollCounter = rollCounter
-        this.patternHolder = patternHolder
+        this.imageHolder = imageHolder
         this.lookupTable = lookupTable
+        this.patternHolder = patternHolder
+        this.rollCounter = rollCounter
 
         this.dice = []
         for (let i = 1; i < 5; i++) {
@@ -247,13 +244,19 @@ class Geomancer {
                 + '</div>'
             )
         }).join('')
-        $('#fortune-box').innerHTML = `<img src='${ DOMAIN }/${ this.getFortuneLink(result) }'>`
+
+        this.imageHolder.innerHTML = `<img src='${ DOMAIN }/${ this.getFortuneLink(result) }'>`
     }
 
     reset () {
         this.rolls = []
         this.rollsLeft = 4
+
+        // remove the rolls, image (fortune), and pattern generated
         this.appendTo.innerHTML = ''
+        this.imageHolder.innerHTML = ''
+        this.patternHolder.innerHTML = ''
+
         this.update()
 
         $('#roll').removeAttribute('disabled')
@@ -288,7 +291,7 @@ class Geomancer {
 
         let toAppend = '</div>'
         for (let i = len - 1; i >= Math.max(0, len - 4); i--) {
-            toAppend = `<img src='./images/die${ this.rolls[i] }.png'>` + toAppend
+            toAppend = `<img src='../images/die${ this.rolls[i] }.png'>` + toAppend
         }
         toAppend = '<div class="roll-result">' + toAppend
 
@@ -309,20 +312,22 @@ function addQuestions (questions) {
 
 document.addEventListener('DOMContentLoaded', function (event) {
     Promise.all([
-        GET('./data/patterns.txt'),
-        GET('./data/question-list.txt')
+        GET('../data/patterns.txt'),
+        GET('../data/question-list.txt')
     ]).then(([ patterns, questions ]) => {
         addQuestions(questions)
 
         let geo = new Geomancer(
-            $('#results'),
-            $('#times'),
-            $('#pattern'),
+            $('#results'),              // div to append rolls to
+            $('#times'),                // tracks how many rolls are left
+            $('#pattern'),              // div to append pattern to
+            $('#fortune-box'),          // div to append fortune (image) to
             new PatternTable(patterns)
         )
 
         $('#question').addEventListener('change', function (event) {
             geo.reset()
+
             if (this.value !== -1) {
                 $('#geomancer-wrapper').style.display = 'inline-block'
                 $('#results').style.display = 'inline-block'
