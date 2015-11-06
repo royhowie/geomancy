@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+    head
+        title geomancer
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        script(src='./bundle.js')
+        link(href='../include/geomancer.css' rel='stylesheet')
+    body
+        #wrapper
+            #header
+                .length-wrapper
+                    img(src='../images/ulogo.png')
+                    h2 Otto G. Richter Library | Department of Special Collections
+            #container
+                h1#title choose a question
+                .question
+                    select#question
+                        option(value='-1') Select Thy Ponderation
+                #geomancer-wrapper
+                    #geomancer
+                        img#geo-background(src='../images/geomancer.png')
+                        img#die1(src='../images/die1.png').face
+                        img#die2(src='../images/die2.png').face
+                        img#die3(src='../images/die3.png').face
+                        img#die4(src='../images/die4.png').face
+                        button#roll roll
+                        p#rolls-left
+                            small rolls left:
+                                span#times 4
+                #results
+                #your-fortune
+                    #pattern
+                        #fortune-box
+            #push
+        #footer
+            p by 
+                a(href='//www.cs.miami.edu/~ogihara/') Dr. Ogihara
+                |  &amp; 
+                a(href='//royhowie.com') Roy Howie
+                |  &amp; 
+                a Maggie Rivers

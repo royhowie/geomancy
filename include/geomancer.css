@@ -1,7 +1,5 @@
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);*/
 @import url(http://fonts.googleapis.com/css?family=News+Cycle);
 * {
-	/*font-family: 'Open Sans Condensed', sans-serif;*/
 	font-family: 'News Cycle', sans-serif;
 	margin: 0;
 	padding: 0;
@@ -139,7 +137,6 @@ img#die4 { margin: 0px 0 0 179px }
 
 div#geomancer-wrapper {
 	border-radius: 4px;
-	/*border: solid 1px black;*/
 	display: none;
 	float: left;
 	height: 200px;
@@ -149,7 +146,6 @@ div#geomancer-wrapper {
 }
 div#results {
 	border-radius: 4px;
-	/*border: solid 1px black;*/
 	display: none;
 	float: left;
 	height: 200px;
@@ -209,7 +205,6 @@ div#fortune-box {
 	height: 150px;
 	margin: 0 0 0 -55px;
 	width: 40%;
-	/*border: solid 1px black;*/
 }
 p#rolls-left {
 	margin-left: 16px;
